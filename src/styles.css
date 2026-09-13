@@ -1,0 +1,114 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Open Sans", sans-serif;
+  --font-sans: "Open Sans", sans-serif;
+
+  --radius: 0.5rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+
+  --color-background: hsl(180 15% 95%);
+  --color-foreground: hsl(180 30% 10%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(180 30% 10%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(180 30% 10%);
+  --color-primary: hsl(174 40% 20%);
+  --color-primary-foreground: hsl(45 80% 95%);
+  --color-secondary: hsl(45 70% 55%);
+  --color-secondary-foreground: hsl(180 30% 10%);
+  --color-muted: hsl(180 10% 90%);
+  --color-muted-foreground: hsl(180 10% 40%);
+  --color-accent: hsl(45 70% 55%);
+  --color-accent-foreground: hsl(180 30% 10%);
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(210 40% 98%);
+  --color-border: hsl(180 10% 85%);
+  --color-input: hsl(180 10% 85%);
+  --color-ring: hsl(174 40% 20%);
+
+  --color-teal-dark: hsl(174 45% 12%);
+  --color-teal-mid: hsl(174 40% 20%);
+  --color-teal-light: hsl(174 30% 35%);
+  --color-gold: hsl(40 75% 55%);
+  --color-gold-light: hsl(42 80% 70%);
+  --color-cream: hsl(40 30% 96%);
+
+  --animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading);
+  }
+}
+
+@utility container {
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 2rem;
+  max-width: 1400px;
+}
+
+@utility section-padding {
+  @apply px-6 py-16 md:px-12 lg:px-20 lg:py-24;
+}
+
+@utility hero-overlay {
+  @apply absolute inset-0 bg-gradient-to-b from-teal-dark/90 via-teal-dark/70 to-teal-dark/90;
+}
+
+@utility service-card {
+  @apply relative overflow-hidden rounded-xl bg-primary/90 p-8 cursor-pointer transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl border border-teal-light/20 hover:border-gold/40;
+}
+
+@utility section-title {
+  @apply text-3xl md:text-4xl lg:text-5xl font-heading font-bold tracking-tight;
+}
+
+@utility gold-accent {
+  @apply text-secondary;
+}
+
+@utility page-hero {
+  @apply relative min-h-[50vh] flex items-center justify-center overflow-hidden;
+}
+
+@utility content-section {
+  @apply py-16 md:py-24;
+}

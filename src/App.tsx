@@ -9,6 +9,7 @@ import WaterSystems from "./pages/WaterSystems";
 import DrinkingWater from "./pages/DrinkingWater";
 import ProjectDelivery from "./pages/ProjectDelivery";
 import NotFound from "./pages/NotFound";
+import FlareGas from "./pages/FlareGas";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/renewable-energy" element={<RenewableEnergy />} />
           <Route path="/water-systems" element={<WaterSystems />} />
+          <Route path="/flare-gas" element={<FlareGas />} />
           <Route path="/drinking-water" element={<DrinkingWater />} />
           <Route path="/project-delivery" element={<ProjectDelivery />} />
           <Route path="*" element={<NotFound />} />
