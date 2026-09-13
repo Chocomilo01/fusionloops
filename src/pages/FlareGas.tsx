@@ -14,6 +14,7 @@ import Layout from "@/components/Layout";
 import PageHero from "@/components/PageHero";
 import flareHero from "@/assets/flare-gas-hero.jpg";
 
+
 const pillars = [
   {
     num: "01",
